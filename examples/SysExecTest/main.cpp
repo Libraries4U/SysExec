@@ -23,19 +23,19 @@ void SysExecTest::btnCb(int n)
 			break;
 			
 		case 3:
-			res = SysExecAdmin(pass, term, "");
+			res = SysExecAdmin(~pass, term, "");
 			break;
 			
 		case 4:
-			res = SysStartAdmin(pass, term, "");
+			res = SysStartAdmin(~pass, term, "");
 			break;
 			
 		case 5:
-			res = SysExecUser(user, pass, term, "");
+			res = SysExecUser(~user, ~pass, term, "");
 			break;
 			
 		case 6:
-			res = SysStartUser(user, pass, term, "");
+			res = SysStartUser(~user, ~pass, term, "");
 			break;
 			
 #ifdef PLATFORM_POSIX
@@ -48,11 +48,11 @@ void SysExecTest::btnCb(int n)
 			break;
 			
 		case 9:
-			res = SysExecUser(user, term, "");
+			res = SysExecUser(~user, term, "");
 			break;
 			
 		case 10:
-			res = SysStartUser(user, term, "");
+			res = SysStartUser(~user, term, "");
 			break;
 #endif			
 		default:
