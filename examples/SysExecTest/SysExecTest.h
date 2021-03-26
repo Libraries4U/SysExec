@@ -5,7 +5,7 @@
 
 using namespace Upp;
 
-#define LAYOUTFILE <SysExecTest/SysExecTest.lay>
+#define LAYOUTFILE <examples/SysExecTest/SysExecTest.lay>
 #include <CtrlCore/lay.h>
 
 class SysExecTest : public WithSysExecTestLayout<TopWindow>
