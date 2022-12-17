@@ -8,7 +8,7 @@ void SysExecTest::btnCb(int n)
 #else
 	String term = "notepad.exe";
 #endif
-	bool res;
+	bool res = false;
 	
 	status.Set("RUNNING.......");
 	Ctrl::ProcessEvents();

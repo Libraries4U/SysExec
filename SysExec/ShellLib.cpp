@@ -3,7 +3,7 @@
 
 #ifdef PLATFORM_WIN32
 
-#include <Shellapi.h>
+#include <shellapi.h>
 
 NAMESPACE_UPP
 
