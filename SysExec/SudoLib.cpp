@@ -41,6 +41,11 @@ bool SudoExec(String user, String const &password, String const &args, VectorMap
 	VectorMap<String, String>env(envir, 1);
 	if(env.Find("DBUS_SESSION_BUS_ADDRESS"))
 		env.RemoveKey("DBUS_SESSION_BUS_ADDRESS");
+
+	// make commands answer in english...sigh
+	if(env.Find("LC_ALL"))
+		env.RemoveKey("LC_ALL");
+	env.Add("LC_ALL", "C");
 	
 	// setup XAUTHORITY for new user, if different
 	// from current one -- this will allow using X display
@@ -153,7 +158,9 @@ bool SudoExec(String user, String const &password, String const &args, VectorMap
 		for(int i = 0; i < 50; i++)
 		{
 			line = _GetLine(sudoFile);
-			if(line.StartsWith("gimmipass"))
+			DLOG(i);
+			DLOG(line);
+			if(line.StartsWith("gimmipass") || line.Mid(2).StartsWith("gimmipass"))
 			{
 				answer = 1;
 				break;
@@ -162,6 +169,13 @@ bool SudoExec(String user, String const &password, String const &args, VectorMap
 			{
 				answer = 2;
 				break;
+			}
+			// damned fingerprint...
+			else if(line.StartsWith("Place your right index"))
+			{
+				kill(pid, SIGINT);
+				Sleep(100);
+				continue;
 			}
 		}
 		// here we have :
