@@ -158,8 +158,8 @@ bool SudoExec(String user, String const &password, String const &args, VectorMap
 		for(int i = 0; i < 50; i++)
 		{
 			line = _GetLine(sudoFile);
-			DLOG(i);
-			DLOG(line);
+//			DLOG(i);
+//			DLOG(line);
 			if(line.StartsWith("gimmipass") || line.Mid(2).StartsWith("gimmipass"))
 			{
 				answer = 1;
