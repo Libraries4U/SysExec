@@ -13,6 +13,10 @@ NAMESPACE_UPP
 // if wait is true, will wait for command end, otherwise executes it in background
 bool ShellExec(String const &args, VectorMap<String, String> const &env, bool wait);
 
+// executes a command as explorer user if launched from privileged one
+// if wait is true, will wait for command end, otherwise executes it in background
+bool ShellExecUser(String const &command, String const &args, VectorMap<String, String> const &env, bool wait);
+
 #endif
 
 END_UPP_NAMESPACE

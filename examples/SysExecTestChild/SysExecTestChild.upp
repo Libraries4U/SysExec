@@ -1,0 +1,9 @@
+uses
+	Core;
+
+file
+	SysExecTestChild.cpp;
+
+mainconfig
+	"" = "";
+

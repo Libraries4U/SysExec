@@ -19,6 +19,11 @@ bool IsXpOrLater(void);
 // check if user is running in admin mode
 bool IsUserAdministrator(void);
 
+////////////////////////////////////////////////////////////////////////////////////
+// find which process uses a dll
+// requires elevated rights to run
+VectorMap<dword, String> ProcessesUsingDll(String DLLName);
+
 #endif
 
 END_UPP_NAMESPACE

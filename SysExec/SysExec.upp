@@ -8,6 +8,7 @@ library(LINUX) util;
 file
 	SysInfo.h,
 	SysInfo.cpp,
+	ProcessDLL.cpp,
 	ArgEnv.h,
 	ArgEnv.cpp,
 	SudoLib.h,
@@ -15,5 +16,7 @@ file
 	ShellLib.h,
 	ShellLib.cpp,
 	SysExec.h,
+	SysExecPosix.cpp,
+	SysExecWin.cpp,
 	SysExec.cpp;
 

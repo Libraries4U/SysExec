@@ -1,0 +1,10 @@
+uses
+	Core,
+	SysExec;
+
+file
+	SysExecTestMain.cpp;
+
+mainconfig
+	"" = "";
+
