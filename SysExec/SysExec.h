@@ -59,6 +59,11 @@ bool SysExecAdmin(String const &password, String const &command, String const &a
 bool SysExecUser(String const &user, String const &password, String const &command, String const &argLine, const VectorMap<String, String> &envMap);
 bool SysExecUser(String const &user, String const &password, String const &command, String const &argLine);
 
+///////////////////////////////////////////////////////////////////////////////////////////////
+// restart a process
+// on windows there's no direct restart support, so we just stop and re-run it
+bool RestartProcess(intptr_t pid);
+
 END_UPP_NAMESPACE
 
 #endif
